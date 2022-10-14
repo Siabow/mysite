@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link href="./res/favicon.ico" rel="shortcut icon">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Siabo Link</title>
+    <style type="text/css">
+      body {
+        font-family: sans-serif;
+      }
+
+      .wrap {
+        text-align: center;
+        margin-top: 16%;
+        margin-bottom: 16%;
+      }
+      .flex-container {
+        display: -webkit-flex;
+        display: flex;
+        -webkit-justify-content: center;
+        justify-content: center;
+        -webkit-flex-wrap: wrap;
+        flex-wrap: wrap;
+      }
+
+      .flex-item:hover .bubble {
+        opacity: 1;
+        top: -24px;
+      }
+
+      .flex-item {
+        width: 240px;
+        height: 240px;
+        margin: 40px;
+        position: relative;
+      }
+
+      .bubble{
+        position: relative;
+        background-color: #309CFF;
+        color: white;
+        font-weight: bold;
+        text-align: center;
+        padding: 16px 30px;
+        border-radius: 30px;
+        top: 0px;
+        opacity: 0;
+
+        -webkit-transition: opacity .2s, top .2s;
+        transition: opacity .2s, top .2s;
+      }
+
+      .bubble:before,.bubble:after{
+        content: "";
+        display: block;
+        border-width: 12px;
+        position: absolute;
+        bottom: -24px;
+        left: 45%;
+        border-style: solid dashed dashed;
+        border-color: #309CFF transparent transparent;
+        font-size: 0;
+        line-height: 0;
+      }
+
+      .wrap {
+        animation: drop .6s cubic-bezier(0.4, 0, 0.2, 1) 0s 1 normal;
+        -webkit-animation: drop .6s cubic-bezier(0.4, 0, 0.2, 1) 0s 1 normal;
+      }
+
+
+      .flex-item:hover img {
+        -webkit-transform: rotate(0deg);
+        transform: rotate(0deg);
+      }
+
+      .animate-item {
+        -webkit-transition: transform .2s;
+        transition: transform .2s;
+
+        transform: rotate(-10deg);
+        -webkit-transform: rotate(-10deg);
+
+        animation: rotate .4s cubic-bezier(0.4, 0, 0.2, 1) .6s 1 normal;
+        -webkit-animation: rotate .4s cubic-bezier(0.4, 0, 0.2, 1) .6s 1 normal;
+      }
+
+      @keyframes drop
+      {
+        from {
+          margin-top: -16%;
+          opacity: 0;
+        }
+        to {
+          margin-top: 16%;
+          opacity: 1;
+        }
+      }
+
+      @keyframes rotate
+      {
+        0 {
+          -webkit-transform: rotate(-10deg);
+          transform: rotate(-10deg);
+        }
+        50% {
+          -webkit-transform: rotate(10deg);
+          transform: rotate(10deg);
+        }
+        100% {
+          -webkit-transform: rotate(-10deg);
+          transform: rotate(-10deg);
+        }
+      }
+
+    </style>
+  </head>
+  <body>
+    <div class="wrap">
+      <div class="flex-container">
+        <div class="flex-item">
+          <div class="bubble">こんにちは、阿波です</div>
+          <a href="#sa"><img class="animate-item" src="./res/siabo.png" alt="Siabo's Avatar"></a>
+        </div>
+        <div class="flex-item">
+          <div class="bubble">Record what I write</div>
+          <a href="https://www.notion.so/53823222b39a44549c10a3329a5dc5ee" target="_blank"><img class="animate-item" src="./res/notion.png" alt="Notion Appicon"></a>
+        </div>
+        <div class="flex-item">
+          <div class="bubble">CN UID: 108664449</div>
+          <a href="./res/gamedata.jpg" target="_blank"><img class="animate-item" src="./res/genshin.png" alt="Genshin Impact Appicon"></a>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
